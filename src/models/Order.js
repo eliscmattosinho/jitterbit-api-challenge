@@ -36,7 +36,7 @@ const OrderSchema = new Schema({
   items: [ItemSchema]
 }, {
   timestamps: true,
-  versionKey: false // Remove the __v field that Mongoose adds by default
+  versionKey: true
 });
 
 export default model('Order', OrderSchema);
