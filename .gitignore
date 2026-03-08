@@ -1,0 +1,25 @@
+# Deps
+node_modules/
+jspm_packages/
+
+# Amb. env.
+.env
+.env.test
+.env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# SO
+.DS_Store
+Thumbs.db

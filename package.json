@@ -1,0 +1,33 @@
+{
+    "name": "jitterbit-order-api",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "API REST para gerenciamento e transformação de pedidos - Desafio Jitterbit",
+    "main": "src/app.js",
+    "scripts": {
+        "start": "node src/app.js",
+        "dev": "nodemon src/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "node",
+        "express",
+        "mongodb",
+        "jitterbit",
+        "api",
+        "integration"
+    ],
+    "author": "Elis Mattosinho",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^3.0.3",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.3",
+        "mongodb": "^7.1.0",
+        "mongoose": "^7.4.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
+}
