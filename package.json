@@ -2,7 +2,7 @@
     "name": "jitterbit-order-api",
     "version": "1.0.0",
     "type": "module",
-    "description": "API REST para gerenciamento e transformação de pedidos - Desafio Jitterbit",
+    "description": "REST API for order management and transformation - Jitterbit Challenge",
     "main": "src/app.js",
     "scripts": {
         "start": "node src/app.js",

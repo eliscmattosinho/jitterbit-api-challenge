@@ -1,6 +1,4 @@
-# Jitterbit - Technical Challenge: Professional Services 🚀
-
-<br />
+# Jitterbit - Technical Challenge: Professional Services
 
 ## About
 
@@ -25,10 +23,12 @@ The application focuses on data integration, receiving payloads in a specific fo
 The API is configured to operate on `localhost:3000` as per requirements.
 
 ### Mandatory
+
 - **Create Order** (`POST /order`): Receives raw data, applies the mapping (from-to), and saves it to the database.
 - **Get Order** (`GET /order/:orderId`): Returns specific order data based on the URL parameter.
 
 ### Optional
+
 - **List All** (`GET /order/list`): Lists all registered orders.
 - **Update** (`PUT /order/:orderId`): Updates information for an existing order.
 - **Delete** (`DELETE /order/:orderId`): Removes an order from the database.
@@ -53,7 +53,7 @@ A central requirement is the transformation of the input JSON into the persisten
 
 <br />
 
-## 📁 Folder Structure
+## Basis Folder Structure
 
 ```text
 src/
