@@ -4,7 +4,7 @@ import { connect } from "mongoose";
 dotenv.config();
 
 /**
- * Estabiliza uma conexão com MongoDB usando URI
+ * Establishes a connection to MongoDB using a URI
  *
  * @async
  * @function connectDB

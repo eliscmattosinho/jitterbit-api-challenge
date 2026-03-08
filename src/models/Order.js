@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-// Schema para os itens dentro do pedido
+// Schema for the items within the order
 const ItemSchema = new Schema({
   productId: {
     type: Number,
@@ -16,7 +16,7 @@ const ItemSchema = new Schema({
   }
 }, { _id: false });
 
-// Schema principal do pedido
+// Main order schema
 const OrderSchema = new Schema({
   orderId: {
     type: String,
@@ -35,8 +35,8 @@ const OrderSchema = new Schema({
   },
   items: [ItemSchema]
 }, {
-  timestamps: true, // Cria automaticamente os campos createdAt e updatedAt
-  versionKey: false // Remove o campo __v que o Mongoose adiciona por padrão
+  timestamps: true,
+  versionKey: false // Remove the __v field that Mongoose adds by default
 });
 
 export default model('Order', OrderSchema);

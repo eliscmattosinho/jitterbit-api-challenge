@@ -1,6 +1,6 @@
 /**
- * Mapeamento (ETL - Data transformation)
- * Transforma o payload recebido em português para o esquema em inglês do banco de dados
+ * Mapping (ETL - Data transformation)
+ * -> Transforms the received payload from pt-br to the en schema of the database
  */
 
 const mapOrderInputToDb = (orderData) => {
@@ -13,12 +13,12 @@ const mapOrderInputToDb = (orderData) => {
         // valorTotal -> value
         value: orderData.valorTotal,
 
-        // Converte a data de criação para o padrão ISO (Z), caso não venha data, utiliza a data atual como fallback
+        // Converts the creation date to the ISO (Z) standard; if no date is provided, uses the current date as a fallback
         creationDate: orderData.dataCriacao
             ? new Date(orderData.dataCriacao).toISOString()
             : new Date().toISOString(),
 
-        // Mapeia o array de itens
+        // Maps the array of items
         items: Array.isArray(orderData.items)
             ? orderData.items.map((item) => ({
                 productId: item.idItem,

@@ -10,15 +10,17 @@ const app = express();
 
 connectDB();
 
-// Middlewares globais
-// -> receber dados JSON no body das requisições
+/**
+ * Global middlewares
+ */
+// -> receive JSON data in the request body
 app.use(express.json());
 
-// Definição das rotas
-// -> rota de autenticação (registro e login)
+// Defining the routes
+// -> authentication route (registration and login)
 app.use("/auth", authRoutes);
 
-// rota de pedidos (CRUD e Mapping)
+// Order routing (CRUD and Mapping)
 app.use("/order", orderRoutes);
 
 app.get("/", (req, res) => {
@@ -29,19 +31,19 @@ app.get("/", (req, res) => {
     });
 });
 
-// Tratamento de rotas não encontradas (404)
+// Handling route not found (404)
 app.use((req, res) => {
     res.status(404).json({
-        message: "Erro 404: Rota não encontrada. Verifique o URL e o método HTTP.",
+        message: "Error 404: Route not found. Check the URL and HTTP method.",
     });
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`\n Servidor iniciado com sucesso!`);
-    console.log(`Porta: ${PORT}`);
+    console.log(`\n Server started successfully!`);
+    console.log(`Port: ${PORT}`);
     console.log(`Local: http://localhost:${PORT}`);
-    console.log(`Pressione CTRL+C para parar o servidor\n`);
+    console.log(`Press CTRL+C to stop the server.\n`);
 });
 
 export default app;

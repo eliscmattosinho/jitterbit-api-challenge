@@ -1,22 +1,22 @@
 import jwt from "jsonwebtoken";
 
 export const authenticateToken = (req, res, next) => {
-    // Busca o token no Header 'Authorization' (padrão: Bearer <TOKEN>)
+    // Search for the token in the Header 'Authorization' (Bearer <TOKEN>)
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1];
 
     if (!token) {
         return res
             .status(401)
-            .json({ message: "Acesso negado. Token não fornecido." });
+            .json({ message: "Access denied. Token not provided." });
     }
 
     try {
-        // Verifica se o token é válido
+        // Check if the token is valid
         const verified = jwt.verify(token, process.env.JWT_SECRET);
         req.user = verified;
         next();
     } catch (error) {
-        res.status(403).json({ message: "Token inválido ou expirado." });
+        res.status(403).json({ message: "Invalid or expired token." });
     }
 };

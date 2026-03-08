@@ -10,23 +10,24 @@ import {
 
 const router = Router();
 
-// Rota OBRIGATÓRIA: criar um novo pedido (protegida)
-// POST http://localhost:3000/order
+/**
+ * REQUIRED ROUTES
+ */
+// POST (protected) http://localhost:3000/order
 router.post("/", authenticateToken, createOrder);
 
-// Rota OBRIGATÓRIA: obter um pedido específico pelo orderId
 // GET http://localhost:3000/order/:orderId
 router.get("/:orderId", getOrderById);
 
-// Rota OPCIONAL: listar todos os pedidos
+/**
+ * OPTIONAL ROUTES
+ */
 // GET http://localhost:3000/order/list
 router.get("/list/all", listOrders);
 
-// Rota OPCIONAL: atualizar um pedido
 // PUT http://localhost:3000/order/:orderId
 router.put("/:orderId", updateOrder);
 
-// Rota OPCIONAL: eliminar um pedido
 // DELETE http://localhost:3000/order/:orderId
 router.delete("/:orderId", deleteOrder);
 
